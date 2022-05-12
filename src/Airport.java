@@ -11,7 +11,7 @@ public class Airport {
    }
    
    public String toString() {
-      String str = "Airport: " + airport + "/nCity: " + city + "/nState: " + state; 
+      String str = "Airport: " + airport + "\nCity: " + city + "\nState: " + state; 
       return str;
    }
 
