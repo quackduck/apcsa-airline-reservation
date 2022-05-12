@@ -10,7 +10,7 @@ public class Airport {
       this.state = state;
    }
    
-   public String toString() {
+   public void toString() {
       System.out.println("Airport: " + airport);
       System.out.println("City: " + city);
       System.out.println("State: " + state);
