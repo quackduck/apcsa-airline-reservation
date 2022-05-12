@@ -10,10 +10,9 @@ public class Airport {
       this.state = state;
    }
    
-   public void toString() {
-      System.out.println("Airport: " + airport);
-      System.out.println("City: " + city);
-      System.out.println("State: " + state);
+   public String toString() {
+      String str = "Airport: " + airport + "/nCity: " + city + "/nState: " + state; 
+      return str;
    }
 
 }
