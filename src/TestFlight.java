@@ -76,28 +76,33 @@ public class TestFlight {
       ArrayList<Flight> found = new ArrayList<Flight>();
       if(action == 'A'){
           // creating new airport object - departure
-         System.out.println("Enter departure airport name: ");
+         System.out.println("\nEnter departure airport name: ");
          String depName = kb.nextLine();
          System.out.println("Enter departure city name: ");
          String depCity = kb.nextLine();
          System.out.println("Enter departure state name: ");
          String depState = kb.nextLine();
-         System.out.println("Enter departure GMT offset: ");
-         String depGMT = kb.nextLine();
+         System.out.println("Enter departure GMT offset (double): ");
+         double depGMT = kb.nextDouble();
          Airport dep = new Airport(depName, depCity, depState, depGMT);
          
+         kb.nextLine();
+         
          // creating new Airport object - arrival
-         System.out.println("Enter arrival airport name: ");
+         System.out.println("\nEnter arrival airport name: ");
          String arrName = kb.nextLine();
          System.out.println("Enter arrival city name: ");
          String arrCity = kb.nextLine();
          System.out.println("Enter arrival state name: ");
          String arrState = kb.nextLine();
-         System.out.println("Enter arrival GMT offset: ");
-         String arrGMT = kb.nextLine();
+         System.out.println("Enter arrival GMT offset (double): ");
+         Double arrGMT = kb.nextDouble();
          Airport arr = new Airport(arrName, arrCity, arrState, arrGMT);
          
+         
+    
          for(Flight f: flights){
+             f.getDepartureLocation();
             if(dep.equals(f.getDepartureLocation()) && arr.equals(f.getArrivalLocation())){
                found.add(f);
             }
@@ -112,9 +117,9 @@ public class TestFlight {
          }
       } else {
          // creating new FlightDate object - departure
-         System.out.println("Enter departure year (4-digits): ");
+         System.out.println("\nEnter departure year (4-digits): ");
          int depYear = kb.nextInt();
-         System.out.println("Enter departure month (integer): ");
+         System.out.println("Enter departure month (integer 1-12): ");
          int depMonth = kb.nextInt();
          System.out.println("Enter departure date (integer): ");
          int depDay = kb.nextInt();
@@ -124,10 +129,12 @@ public class TestFlight {
          int depMinute = kb.nextInt();
          FlightDate departure = new FlightDate(depYear, depMonth, depDay, depHour, depMinute);
          
+         kb.nextLine();
+         
          // creating new FlightDate object - arrival
-         System.out.println("Enter arrival year (4-digits): ");
+         System.out.println("\nEnter arrival year (4-digits): ");
          int arrYear = kb.nextInt();
-         System.out.println("Enter arrival month (integer): ");
+         System.out.println("Enter arrival month (integer 1-12): ");
          int arrMonth = kb.nextInt();
          System.out.println("Enter arrival date (integer): ");
          int arrDay = kb.nextInt();
@@ -194,31 +201,35 @@ public class TestFlight {
    }
    private static Flight getNewFlight(Scanner kb){
       // creating new airport object - departure
-         System.out.println("Enter departure airport name: ");
+         System.out.println("\nEnter departure airport name: ");
          String depName = kb.nextLine();
          System.out.println("Enter departure city name: ");
          String depCity = kb.nextLine();
          System.out.println("Enter departure state name: ");
          String depState = kb.nextLine();
-         System.out.println("Enter departure GMT offset: ");
-         String depGMT = kb.nextLine();
+         System.out.println("Enter departure GMT offset (double): ");
+         Double depGMT = kb.nextDouble();
          Airport depAir = new Airport(depName, depCity, depState, depGMT);
          
+         kb.nextLine();
+         
          // creating new Airport object - arrival
-         System.out.println("Enter arrival airport name: ");
+         System.out.println("\nEnter arrival airport name: ");
          String arrName = kb.nextLine();
          System.out.println("Enter arrival city name: ");
          String arrCity = kb.nextLine();
          System.out.println("Enter arrival state name: ");
          String arrState = kb.nextLine();
-         System.out.println("Enter arrival GMT offset: ");
-         String arrGMT = kb.nextLine();
+         System.out.println("Enter arrival GMT offset (double): ");
+         Double arrGMT = kb.nextDouble();
          Airport arrAir = new Airport(arrName, arrCity, arrState, arrGMT);
          
+         kb.nextLine();
+         
          // creating new FlightDate object - departure
-         System.out.println("Enter departure year (4-digits): ");
+         System.out.println("\nEnter departure year (4-digits): ");
          int depYear = kb.nextInt();
-         System.out.println("Enter departure month (integer): ");
+         System.out.println("Enter departure month (integer 1-12): ");
          int depMonth = kb.nextInt();
          System.out.println("Enter departure date (integer): ");
          int depDay = kb.nextInt();
@@ -228,10 +239,12 @@ public class TestFlight {
          int depMinute = kb.nextInt();
          FlightDate depTime = new FlightDate(depYear, depMonth, depDay, depHour, depMinute);
          
+         kb.nextLine();
+         
          // creating new FlightDate object - arrival
-         System.out.println("Enter arrival year (4-digits): ");
+         System.out.println("\nEnter arrival year (4-digits): ");
          int arrYear = kb.nextInt();
-         System.out.println("Enter arrival month (integer): ");
+         System.out.println("Enter arrival month (integer 1-12): ");
          int arrMonth = kb.nextInt();
          System.out.println("Enter arrival date (integer): ");
          int arrDay = kb.nextInt();
@@ -241,9 +254,13 @@ public class TestFlight {
          int arrMinute = kb.nextInt();
          FlightDate arrTime = new FlightDate(arrYear, arrMonth, arrDay, arrHour, arrMinute);
          
-         System.out.println("Enter flight ID Number: ");
+         kb.nextLine();
+         
+         System.out.println("\nEnter flight ID Number: ");
          int flightID = kb.nextInt();
-         System.out.println("Enter flight capacity (number of seats): ");
+         
+         kb.nextLine();
+         System.out.println("\nEnter flight capacity (number of seats): ");
          int capacity = kb.nextInt();
       
       Flight newFlight = 
