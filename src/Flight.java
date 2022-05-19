@@ -45,4 +45,10 @@ public class Flight {
     public int getCapacity(){
       return capacity;
     }
+    
+    public String toString(){
+        String str = "Departure --> " +  "\n\n" + departureLocation.toString() + "\n" + departureDate.getDatePretty();
+        str+= "\nArrival --> " +  "\n]n" + arrivalLocation.toString() + "\n" + departureDate.getDatePretty();
+        return str;
+    }
 }
