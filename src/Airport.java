@@ -1,3 +1,13 @@
+/*
+ * Airport.java
+ * by Nikki Benabbas
+ * 5/17/2022
+ * p3
+ */
+
+package ARS;
+import java.util.ArrayList;
+
 public class Airport {
 
    private String airport;
