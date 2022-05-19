@@ -9,7 +9,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.*;
 
-public class TestPassenger {
+public class OsbornesTestPassenger {
    
    // class constant
    private static final String FILENAME = "Passenger.dat";
