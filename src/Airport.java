@@ -5,7 +5,7 @@
  * p3
  */
 
-package ARS;
+package AirlineReservation;
 import java.util.ArrayList;
 
 public class Airport {

@@ -6,7 +6,7 @@
  */
 
 // change or remove package as required
-package ARS;
+package AirlineReservation;
 
 import java.time.*;
 import java.util.ArrayList;

@@ -4,7 +4,7 @@
  * by Shriya Sateesh
  * used code by w p osborne
  */
-package ARS;
+package AirlineReservation;
 
 import java.util.Scanner;
 import java.util.ArrayList;

@@ -3,7 +3,7 @@
  * by w p osborne
  * 4/5/2022
  */
-package ARS;
+package AirlineReservation;
 
 import java.util.Scanner;
 import java.util.ArrayList;
