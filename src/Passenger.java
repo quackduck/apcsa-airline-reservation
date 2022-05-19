@@ -8,7 +8,6 @@ public class Passenger {
     // fields
     private String firstName; 
     private String lastName;
-    private int flightNum;
     
     // constructor
     public Passenger(String first, String last) {
@@ -24,7 +23,7 @@ public class Passenger {
         return lastName;
     }
     public String toString() {
-        return "Name: " + firstName + " " + lastName + "\nFlight number: " + flightNum;
+        return "Name: " + firstName + " " + lastName;
     }
     
     // mutators
@@ -33,9 +32,6 @@ public class Passenger {
     }
     public void setLastName(String last) {
         lastName = last;
-    }
-    public void setFlightNum(int num) {
-        flightNum = num;
     }
 }
 
