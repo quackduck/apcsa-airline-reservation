@@ -46,8 +46,7 @@ public class Flight {
     }
     
     public String toString(){
-        String str = "Departure --> " +  "\n\n" + departureLocation.toString() + "\n" + departureDate.getDatePretty();
-        str+= "\nArrival --> " +  "\n]n" + arrivalLocation.toString() + "\n" + departureDate.getDatePretty();
-        return str;
+        return "Departure --> " +  "\n\n" + departureLocation.toString() + "\n" + departureDate.getDatePretty()
+              + "\nArrival --> " +  "\n]n" + arrivalLocation.toString() + "\n" + departureDate.getDatePretty();
     }
 }

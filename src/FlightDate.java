@@ -92,14 +92,11 @@ public class FlightDate {
       if(getHour12() < 10){
          str += "0";
       }
-      str += Integer.toString(getHour12());
-      str += ":";
+      str += Integer.toString(getHour12()) + ":";
       if(getMinutes() < 10){
          str += "0";
       }
-      str += getMinutes();
-      str += " " + getAMPM();
-      return str;
+      return str + getMinutes() + " " + getAMPM();
    }
    
    public LocalDateTime getLocalDateTimeObject(){
@@ -108,36 +105,24 @@ public class FlightDate {
    
    // Compare to another FlightDate object.
    public int getDifferenceHours(LocalDateTime otherDT){
-      long time[] = getTime(otherDT);
-      return (int)time[0];
-      //return dateTime.getHour() - otherDT.getHour();
+      return (int)getTime(otherDT)[0];
    }
    public int getDifferenceMinutes(LocalDateTime otherDT){
-      //return dateTime.getMinute() - otherDT.getMinute();
-      long time[] = getTime(otherDT);
-      return (int)time[1];
+      return (int)getTime(otherDT)[1];
    }
    
    public String getTimeDifferencePretty(LocalDateTime otherDT){
       // Approach derived from stackoverflow
-      
       long[] results = getTime(otherDT);
-      String str = "Hours: " + results[0] + ", Minutes: " + results[1];
-      return str;
+      return "Hours: " + results[0] + ", Minutes: " + results[1];
    }
    
-   private long[] getTime(LocalDateTime end){
-      Duration duration = Duration.between(dateTime, end);
-      
-      long seconds = duration.getSeconds();
+   private long[] getTime(LocalDateTime end) {
+      long seconds = Duration.between(dateTime, end).getSeconds();
       long hours = seconds / (60 * 60); // seconds / hour
-      //long minutes = (seconds % 60) / 60; 
       long minutes = ((seconds % (60 * 60)) / 60);
-      
-      long[] results = new long[2];
-      results[0] = hours;
-      results[1] = minutes;
-      return results;
+
+      return new long[]{hours, minutes};
    }
    
    // Formats are constants called from the DateTimeFormatter class. To use
