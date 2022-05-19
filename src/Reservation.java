@@ -5,7 +5,7 @@
  * p3
  */
 
-package AirlineReservation;
+
 import java.util.ArrayList;
 
 public class Reservation {

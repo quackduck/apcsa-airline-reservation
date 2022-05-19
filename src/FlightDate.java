@@ -4,7 +4,7 @@
  * 4/4/2022
  */
 
-package AirlineReservation;
+
 // Following imports could be replaced with
 import java.time.*;
 import java.time.format.DateTimeFormatter;

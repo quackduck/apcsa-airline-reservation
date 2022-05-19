@@ -3,7 +3,6 @@
 // 3/24/2022
 // Period 3
 
-package AirlineReservation;
 
 public class Flight {
     private Airport departureLocation;

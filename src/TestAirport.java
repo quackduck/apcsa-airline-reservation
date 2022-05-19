@@ -5,7 +5,6 @@
  * p3
  */
 
-package AirlineReservation;
 
 import java.io.*;
 import java.util.Scanner;

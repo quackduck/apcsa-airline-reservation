@@ -1,5 +1,3 @@
-package AirlineReservation;
-
 import java.util.*;
 
 class ReservationsMain {

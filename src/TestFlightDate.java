@@ -5,8 +5,6 @@
  * Period 3
  */
 
-// change or remove package as required
-package AirlineReservation;
 
 import java.time.*;
 import java.util.ArrayList;
