@@ -12,6 +12,22 @@ public class Airport {
       this.GMTOffset = GMTOffset;
    }
    
+   public String getAirport() {
+       return airport;
+   }
+   
+   public String getCity() {
+       return city;
+   }
+   
+   public String getState() {
+       return state;
+   }
+   
+   public double getGMTOffset() {
+       return GMTOffset;
+   }
+   
    public String toString() {
       String str = "Airport: " + airport + "\nCity: " + city + "\nState: " + state + "\nGMT Offset: " + GMTOffset; 
       return str;
