@@ -21,9 +21,11 @@ public class TestPassenger {
          System.out.println("A: Print passengers");
          System.out.println("B: Add passenger");
          System.out.println("C: Remove passenger");
+         System.out.println("D: Change passenger first name");
+         System.out.println("E: Change passenger last name");
          System.out.println("Q: Quit");
          
-         System.out.print("Enter A, B, C, or Q: ");
+         System.out.print("Enter A, B, C, D, E, or Q: ");
          selection = s.next();
          selection = selection.toUpperCase();
          System.out.println();
@@ -46,6 +48,32 @@ public class TestPassenger {
             for (int i = 0; i < passengers.size(); i++) {
                if (passengers.get(i).getFirstName().equals(firstName) && passengers.get(i).getLastName().equals(lastName)) {
                   passengers.remove(i);
+                  break;
+               }
+            }
+         } else if (selection.equals("D")) {
+            System.out.println("Enter first name of passenger: ");
+            String firstName = s.next();
+            System.out.println("Enter last name of passenger: ");
+            String lastName = s.next();
+            for (int i = 0; i < passengers.size(); i++) {
+               if (passengers.get(i).getFirstName().equals(firstName) && passengers.get(i).getLastName().equals(lastName)) {
+                  System.out.print("Enter new first name: ");
+                  String newFirstName = s.next();
+                  passengers.get(i).setFirstName(newFirstName);
+                  break;
+               }
+            }
+         } else if (selection.equals("E")) {
+            System.out.println("Enter first name of passenger: ");
+            String firstName = s.next();
+            System.out.println("Enter last name of passenger: ");
+            String lastName = s.next();
+            for (int i = 0; i < passengers.size(); i++) {
+               if (passengers.get(i).getFirstName().equals(firstName) && passengers.get(i).getLastName().equals(lastName)) {
+                  System.out.print("Enter new last name: ");
+                  String newLastName = s.next();
+                  passengers.get(i).setLastName(newLastName);
                   break;
                }
             }
