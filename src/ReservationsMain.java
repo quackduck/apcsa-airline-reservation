@@ -103,7 +103,7 @@ class ReservationsMain {
                 case 7:
                     System.out.println("Please enter the flight number:");
                     int flightNum = input.nextInt();
-                    for (Flight f : flights) {
+                    for (Reservation f : res) {
                         if (f.getID() == flightNum) {
                             System.out.println(f);
                         }
