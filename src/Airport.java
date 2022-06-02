@@ -38,7 +38,7 @@ public class Airport {
     }
 
     public String toString() {
-        return "Airport: " + airport + "\nCity: " + city + "\nState: " + state + "\nGMT Offset: " + GMTOffset;
+        return "Airport: " + airport + " City: " + city + " State: " + state + " GMT Offset: " + GMTOffset;
     }
 
 }

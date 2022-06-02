@@ -24,7 +24,7 @@ public class Passenger implements java.io.Serializable {
     }
 
     public String toString() {
-        return "Name: " + firstName + " " + lastName;
+        return firstName + " " + lastName;
     }
 
     // mutators

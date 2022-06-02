@@ -16,7 +16,7 @@ class ReservationsMain {
         System.out.println("4. Print all Flights");
         System.out.println("5. Print all Passengers");
         System.out.println("6. Print all Airports");
-        System.out.println("7. Print passengers by flight number");
+        System.out.println("7. Get flight details by flight number");
         System.out.println("8. Quit");
 
         int choice = 0;
@@ -37,7 +37,7 @@ class ReservationsMain {
 
                     Airport airport = new Airport(airportName, city, state, gmtOffset);
                     airports.add(airport);
-                    System.out.println("Airport added!");
+                    System.out.println("Airport added:\n" + airport);
                     break;
                 case 2:
                     System.out.print("Please enter the flight number: ");
@@ -84,13 +84,17 @@ class ReservationsMain {
                     int flightNum = input.nextInt();
 
                     // TODO. add this passenger to the flight
+                    Flight fl = null;
                     for (Flight f : flights) {
                         if (f.getID() == flightNum) {
+                            fl = f;
+                            // print the flight and passenger
+
                             f.addPassenger(passenger);
                         }
                     }
 
-                    System.out.println("Passenger added!");
+                    System.out.println("Passenger added to flight:\n" + fl);
                     break;
                 case 4:
                     for (Flight f : flights) {
@@ -110,15 +114,15 @@ class ReservationsMain {
                         System.out.println(a);
                     }
                     break;
-                // case 7:
-                // System.out.println("Please enter the flight number:");
-                // int flightNum = input.nextInt();
-                // for (Reservation f : res) {
-                // if (f.getID() == flightNum) {
-                // System.out.println(f);
-                // }
-                // }
-                // break;
+                case 7:
+                    System.out.print("Please enter the flight number: ");
+                    int fnum = input.nextInt();
+                    for (Flight f : flights) {
+                        if (f.getID() == fnum) {
+                            System.out.println(f);
+                        }
+                    }
+                    break;
             }
         }
     }
@@ -134,6 +138,6 @@ class ReservationsMain {
         int hour = input.nextInt();
         System.out.print("Please enter the " + kind + " time minute (eg. 30): ");
         int minute = input.nextInt();
-        return new FlightDate(month, day, year, hour, minute);
+        return new FlightDate(year, month, day, hour, minute);
     }
 }
