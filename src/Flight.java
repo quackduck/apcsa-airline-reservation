@@ -3,50 +3,54 @@
 // 3/24/2022
 // Period 3
 
-
 public class Flight {
-    private Airport departureLocation;
-    private Airport arrivalLocation;
-    private int flightIDNumber;
-    private FlightDate departureDate;
-    private FlightDate arrivalDate;
-    private int capacity;
-    
-    public Flight(Airport departureLocation, Airport arrivalLocation, int flightIDNumber, FlightDate departureDate, FlightDate arrivalDate, int capacity) {
-      this.departureLocation = departureLocation;
-      this.arrivalLocation = arrivalLocation;
-      this.flightIDNumber = flightIDNumber;
-      this.departureDate = departureDate;
-      this.arrivalDate = arrivalDate;
-      this.capacity = capacity;
-    }
-    
-    public Airport getDepartureLocation(){
-      return departureLocation;
-    }
-    
-    public Airport getArrivalLocation(){
-      return arrivalLocation;
-    }
-    
-    public int getID(){
-      return flightIDNumber;
-    }
-    
-    public FlightDate getDepartureDate(){
-      return departureDate;
-    }
-    
-    public FlightDate getArrivalDate(){
-      return arrivalDate;
-    }
-    
-    public int getCapacity(){
-      return capacity;
-    }
-    
-    public String toString(){
-        return "Departure --> " +  "\n\n" + departureLocation.toString() + "\n" + departureDate.getDatePretty()
-              + "\nArrival --> " +  "\n]n" + arrivalLocation.toString() + "\n" + departureDate.getDatePretty();
-    }
+  private Airport departureLocation;
+  private Airport arrivalLocation;
+  private int flightIDNumber;
+  private FlightDate departureDate;
+  private FlightDate arrivalDate;
+  private int capacity;
+
+  // add a method to add passengers
+  // add a variable holding an arraylist of passengers
+  // make toString list passengers too in a nice format
+
+  public Flight(Airport departureLocation, Airport arrivalLocation, int flightIDNumber, FlightDate departureDate,
+      FlightDate arrivalDate, int capacity) {
+    this.departureLocation = departureLocation;
+    this.arrivalLocation = arrivalLocation;
+    this.flightIDNumber = flightIDNumber;
+    this.departureDate = departureDate;
+    this.arrivalDate = arrivalDate;
+    this.capacity = capacity;
+  }
+
+  public Airport getDepartureLocation() {
+    return departureLocation;
+  }
+
+  public Airport getArrivalLocation() {
+    return arrivalLocation;
+  }
+
+  public int getID() {
+    return flightIDNumber;
+  }
+
+  public FlightDate getDepartureDate() {
+    return departureDate;
+  }
+
+  public FlightDate getArrivalDate() {
+    return arrivalDate;
+  }
+
+  public int getCapacity() {
+    return capacity;
+  }
+
+  public String toString() {
+    return "Departure --> " + "\n\n" + departureLocation.toString() + "\n" + departureDate.getDatePretty()
+        + "\nArrival --> " + "\n]n" + arrivalLocation.toString() + "\n" + departureDate.getDatePretty();
+  }
 }
