@@ -7,7 +7,6 @@
 // Following imports could be replaced with
 import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
 
 public class FlightDate implements java.io.Serializable {
    // instance variables

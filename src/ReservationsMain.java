@@ -30,8 +30,9 @@ class ReservationsMain {
         int choice = 0;
         while (choice != 8) {
             save();
-            System.out.print("$  ");
+            System.out.print("\u001b[31m$  ");
             choice = input.nextInt();
+            System.out.print("\u001b[0m");
             switch (choice) {
                 case 0:
                     System.out.println(optionsMsg);
@@ -71,11 +72,21 @@ class ReservationsMain {
                         }
                     }
 
+                    if (originAirport == null) {
+                        System.out.println("Origin airport not found.");
+                        break;
+                    }
+
                     Airport destinationAirport = null;
                     for (Airport a : airports) {
                         if (a.getAirport().equals(destination)) {
                             destinationAirport = a;
                         }
+                    }
+
+                    if (destinationAirport == null) {
+                        System.out.println("Destination airport not found.");
+                        break;
                     }
 
                     Flight flight = new Flight(originAirport, destinationAirport, flightNumber,
@@ -106,6 +117,11 @@ class ReservationsMain {
                         }
                     }
 
+                    if (fl == null) {
+                        System.out.println("Flight not found.");
+                        break;
+                    }
+
                     System.out.println("Passenger added to flight:\n" + fl);
                     break;
                 case 4:
@@ -114,13 +130,10 @@ class ReservationsMain {
                     }
                     break;
                 case 5:
-                    // for (Flight f : flights) {
-                    // System.out.println();
-                    // }
-                    // for (Passenger p : passengers) {
-                    // System.out.println(p);
-                    // }
-                    // break;
+                    for (Flight f : flights) {
+                        System.out.println("Flight " + f.getID() + ": " + f.getPassengers());
+                    }
+                    break;
                 case 6:
                     for (Airport a : airports) {
                         System.out.println(a);
