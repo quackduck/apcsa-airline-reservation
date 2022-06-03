@@ -5,9 +5,7 @@
  * p3
  */
 
-import java.util.ArrayList;
-
-public class Airport {
+public class Airport implements java.io.Serializable {
 
     private String airport;
     private String city;

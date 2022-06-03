@@ -9,7 +9,7 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
-public class FlightDate {
+public class FlightDate implements java.io.Serializable {
    // instance variables
    private LocalDateTime dateTime;
 

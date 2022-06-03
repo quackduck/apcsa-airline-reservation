@@ -5,7 +5,7 @@
 
 import java.util.*;
 
-public class Flight {
+public class Flight implements java.io.Serializable {
   private Airport departureLocation;
   private Airport arrivalLocation;
   private int flightIDNumber;

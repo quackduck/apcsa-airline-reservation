@@ -1,29 +1,41 @@
+import java.io.*;
 import java.util.*;
 
 class ReservationsMain {
+
+    private static ArrayList<Airport> airports = new ArrayList<Airport>();
+    private static ArrayList<Flight> flights = new ArrayList<Flight>();
+
     public static void main(String[] args) {
-        // on startup
-        ArrayList<Airport> airports = new ArrayList<Airport>();
-        ArrayList<Flight> flights = new ArrayList<Flight>();
+
+        load();
 
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Welcome to the Flight Reservation System!\n");
-        System.out.println("Please select an option:");
-        System.out.println("1. Add an Airport");
-        System.out.println("2. Add a Flight");
-        System.out.println("3. Make a Reservation");
-        System.out.println("4. Print all Flights");
-        System.out.println("5. Print all Passengers");
-        System.out.println("6. Print all Airports");
-        System.out.println("7. Get flight details by flight number");
-        System.out.println("8. Quit");
+        // all the messages above as a string
+
+        String optionsMsg = "\nPlease select an option:\n" +
+                "0. Print this menu\n" +
+                "1. Add an Airport\n" +
+                "2. Add a Flight\n" +
+                "3. Make a Reservation\n" +
+                "4. Print all Flights\n" +
+                "5. Print all Passengers\n" +
+                "6. Print all Airports\n" +
+                "7. Get flight details by flight number\n" +
+                "8. Quit\n";
+
+        System.out.println("Welcome to the Flight Reservation System!\n" + optionsMsg);
 
         int choice = 0;
         while (choice != 8) {
-            System.out.print(">  ");
+            save();
+            System.out.print("$  ");
             choice = input.nextInt();
             switch (choice) {
+                case 0:
+                    System.out.println(optionsMsg);
+                    break;
                 case 1:
                     System.out.print("Please enter the name of the airport: ");
                     String airportName = input.next();
@@ -139,5 +151,58 @@ class ReservationsMain {
         System.out.print("Please enter the " + kind + " time minute (eg. 30): ");
         int minute = input.nextInt();
         return new FlightDate(year, month, day, hour, minute);
+    }
+
+    private static void save() {
+        // use java serialization to save the data to files
+
+        // save the airports
+        try {
+            FileOutputStream fos = new FileOutputStream("airports.dat");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(airports);
+            oos.close();
+        } catch (IOException e) {
+            System.out.println("Error saving airports " + e);
+        }
+
+        // save the flights
+        try {
+            FileOutputStream fos = new FileOutputStream("flights.dat");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(flights);
+            oos.close();
+        } catch (IOException e) {
+            System.out.println("Error saving flights " + e);
+        }
+
+    }
+
+    private static void load() {
+        // use java serialization to load the data from files
+
+        // load the airports
+        try {
+            FileInputStream fis = new FileInputStream("airports.dat");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            airports = (ArrayList<Airport>) ois.readObject();
+            ois.close();
+        } catch (java.io.FileNotFoundException e) {
+
+        } catch (Exception e) {
+            System.out.println("Error loading airports " + e);
+        }
+
+        // load the flights
+        try {
+            FileInputStream fis = new FileInputStream("flights.dat");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            flights = (ArrayList<Flight>) ois.readObject();
+            ois.close();
+        } catch (java.io.FileNotFoundException e) {
+
+        } catch (Exception e) {
+            System.out.println("Error loading flights " + e);
+        }
     }
 }
