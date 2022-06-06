@@ -52,6 +52,12 @@ public class Flight implements java.io.Serializable {
     passengers.add(passenger);
   }
 
+  public void removePassenger(Passenger passenger) {
+    for (Passenger p : passengers) {
+      if (p + "" == passenger + "") passengers.remove(p); // get around objects being unequal even if the fields are the same
+    }
+  }
+
   public ArrayList<Passenger> getPassengers() {
     return passengers;
   }

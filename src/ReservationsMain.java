@@ -23,14 +23,15 @@ class ReservationsMain {
                 "5. Print all Passengers\n" +
                 "6. Print all Airports\n" +
                 "7. Get flight details by flight number\n" +
-                "8. Quit\n";
+                "8. Delete a reservation\n" +
+                "9. Quit\n";
 
         System.out.println("Welcome to the Flight Reservation System!\n" + optionsMsg);
 
         int choice = 0;
-        while (choice != 8) {
+        while (choice != 9) {
             save();
-            System.out.print("\u001b[31m$  ");
+            System.out.print("\u001b[32m$  ");
             choice = input.nextInt();
             System.out.print("\u001b[0m");
             switch (choice) {
@@ -148,6 +149,37 @@ class ReservationsMain {
                         }
                     }
                     break;
+                case 8:
+                    System.out.print("Please enter the first name: ");
+                    firstName = input.next();
+                    System.out.print("Please enter the last name: ");
+                    lastName = input.next();
+                    passenger = new Passenger(firstName, lastName);
+
+                    // get the flight number
+                    System.out.print("Please enter the flight number: ");
+                    flightNum = input.nextInt();
+
+                    // TODO. add this passenger to the flight
+                    fl = null;
+                    for (Flight f : flights) {
+                        if (f.getID() == flightNum) {
+                            fl = f;
+                            // print the flight and passenger
+
+                            f.removePassenger(passenger);
+                        }
+                    }
+
+                    if (fl == null) {
+                        System.out.println("Flight not found.");
+                        break;
+                    }
+
+                    System.out.println("Passenger removed from flight:\n" + fl);
+                    break;
+                default:
+                    System.out.println("What are you trying to pull here?");
             }
         }
     }
