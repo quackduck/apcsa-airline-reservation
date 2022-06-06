@@ -107,13 +107,10 @@ class ReservationsMain {
                     System.out.print("Please enter the flight number: ");
                     int flightNum = input.nextInt();
 
-                    // TODO. add this passenger to the flight
                     Flight fl = null;
                     for (Flight f : flights) {
                         if (f.getID() == flightNum) {
                             fl = f;
-                            // print the flight and passenger
-
                             f.addPassenger(passenger);
                         }
                     }
@@ -160,13 +157,10 @@ class ReservationsMain {
                     System.out.print("Please enter the flight number: ");
                     flightNum = input.nextInt();
 
-                    // TODO. add this passenger to the flight
                     fl = null;
                     for (Flight f : flights) {
                         if (f.getID() == flightNum) {
                             fl = f;
-                            // print the flight and passenger
-
                             f.removePassenger(passenger);
                         }
                     }
