@@ -1,5 +1,5 @@
 // Passenger.java
-// by Ishan Goel, Alvin Liu
+// by Ishan G. Alvin L. and Nikki B.
 // 5/19/2022
 // Period 3
 

@@ -1,6 +1,6 @@
 /*
  * Airport.java
- * by Nikki Benabbas
+ * by Nikki B. and Riya R.
  * 5/17/2022
  * p3
  */

@@ -1,5 +1,5 @@
 // TestPassenger.java
-// by Ishan Goel, Alvin Liu
+// by Ishan G. and Alvin L.
 // 5/19/2022
 // Period 3
 

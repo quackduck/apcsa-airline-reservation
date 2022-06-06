@@ -1,7 +1,7 @@
 /*
  * TestFlightDate.java
  * 5/10/2022
- * by Shriya Sateesh
+ * by Shriya S.
  * Period 3
  */
 

@@ -1,7 +1,7 @@
 /*
  * TestFlight.java
  * 5/12/2022
- * by Shriya Sateesh
+ * by Shriya S.
  * used code by w p osborne
  */
 

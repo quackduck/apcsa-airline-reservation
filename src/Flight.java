@@ -1,5 +1,5 @@
 // Flight.java
-// By Tamir M.
+// By Shriya S. and Tamir M.
 // 3/24/2022
 // Period 3
 
