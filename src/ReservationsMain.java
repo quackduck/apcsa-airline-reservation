@@ -1,4 +1,4 @@
-// Passenger.java
+// ReservationsMain.java
 // by Ishan G. and Alvin L.
 // 6/06/2022
 // Period 3
