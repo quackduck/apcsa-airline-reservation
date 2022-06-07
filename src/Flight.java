@@ -48,8 +48,17 @@ public class Flight implements java.io.Serializable {
     return capacity;
   }
 
-  public void addPassenger(Passenger passenger) {
+  // may return an error
+  public String addPassenger(Passenger passenger) {
+    if (capacity == passengers.size())
+      return "Flight is full.";
+
+    for (Passenger p : passengers)
+      if ((p + "").equals(passenger + "")) // get around objects being unequal even if the fields are the same
+        return "Passenger already exists.";
+
     passengers.add(passenger);
+    return "";
   }
 
   public void removePassenger(Passenger passenger) {

@@ -45,11 +45,11 @@ class ReservationsMain {
                     break;
                 case 1:
                     System.out.print("Please enter the name of the airport: ");
-                    String airportName = input.next();
+                    String airportName = input.nextLine();
                     System.out.print("Please enter the city of the airport: ");
-                    String city = input.next();
+                    String city = input.nextLine();
                     System.out.print("Please enter the state: ");
-                    String state = input.next();
+                    String state = input.nextLine();
 
                     System.out.print("Please enter the gmt offset: ");
                     double gmtOffset = input.nextDouble();
@@ -62,9 +62,9 @@ class ReservationsMain {
                     System.out.print("Please enter the flight number: ");
                     int flightNumber = input.nextInt();
                     System.out.print("Please enter the origin airport: ");
-                    String origin = input.next();
+                    String origin = input.nextLine();
                     System.out.print("Please enter the destination airport: ");
-                    String destination = input.next();
+                    String destination = input.nextLine();
 
                     // get a capacity
                     System.out.print("Please enter the capacity of the flight: ");
@@ -103,9 +103,9 @@ class ReservationsMain {
                     break;
                 case 3:
                     System.out.print("Please enter the first name: ");
-                    String firstName = input.next();
+                    String firstName = input.nextLine();
                     System.out.print("Please enter the last name: ");
-                    String lastName = input.next();
+                    String lastName = input.nextLine();
                     Passenger passenger = new Passenger(firstName, lastName);
 
                     // get the flight number
@@ -113,12 +113,21 @@ class ReservationsMain {
                     int flightNum = input.nextInt();
 
                     Flight fl = null;
+                    boolean errWasThere = false;
                     for (Flight f : flights) {
                         if (f.getID() == flightNum) {
                             fl = f;
-                            f.addPassenger(passenger);
+                            String err = f.addPassenger(passenger);
+                            if (err != null) {
+                                System.out.println(err);
+                                errWasThere = true;
+                                break;
+                            }
                         }
                     }
+
+                    if (errWasThere)
+                        break;
 
                     if (fl == null) {
                         System.out.println("Flight not found.");
@@ -128,34 +137,29 @@ class ReservationsMain {
                     System.out.println("Passenger added to flight:\n" + fl);
                     break;
                 case 4:
-                    for (Flight f : flights) {
+                    for (Flight f : flights)
                         System.out.println(f);
-                    }
                     break;
                 case 5:
-                    for (Flight f : flights) {
+                    for (Flight f : flights)
                         System.out.println("Flight " + f.getID() + ": " + f.getPassengers());
-                    }
                     break;
                 case 6:
-                    for (Airport a : airports) {
+                    for (Airport a : airports)
                         System.out.println(a);
-                    }
                     break;
                 case 7:
                     System.out.print("Please enter the flight number: ");
                     int fnum = input.nextInt();
-                    for (Flight f : flights) {
-                        if (f.getID() == fnum) {
+                    for (Flight f : flights)
+                        if (f.getID() == fnum)
                             System.out.println(f);
-                        }
-                    }
                     break;
                 case 8:
                     System.out.print("Please enter the first name: ");
-                    firstName = input.next();
+                    firstName = input.nextLine();
                     System.out.print("Please enter the last name: ");
-                    lastName = input.next();
+                    lastName = input.nextLine();
                     passenger = new Passenger(firstName, lastName);
 
                     // get the flight number
@@ -163,12 +167,11 @@ class ReservationsMain {
                     flightNum = input.nextInt();
 
                     fl = null;
-                    for (Flight f : flights) {
+                    for (Flight f : flights)
                         if (f.getID() == flightNum) {
                             fl = f;
                             f.removePassenger(passenger);
                         }
-                    }
 
                     if (fl == null) {
                         System.out.println("Flight not found.");
